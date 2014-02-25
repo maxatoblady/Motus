@@ -188,18 +188,18 @@ var $motdico;
 			// Sinon on commence à générer les erreur
                     $badletter = array_intersect($motSoumis,$motdico);
                     $goodletter = array_intersect_assoc($motdico,$motSoumis);
-                    $notin = array('-','-','-','-','-');        // On remplace les lettres non existante pas des tiret
+                    $notin = array('-','-','-','-','-');        // On remplace les lettres non existantes par des tirets
 
                       $majletter = array_diff_assoc($badletter,$goodletter);
 			
 			foreach($majletter as $key => $va)
 			{
-			$majwords[$key] = strtoupper($va); // On met les lettres existante mais mal positions en Majuscule
+			$majwords[$key] = strtoupper($va); // On met les lettres existante mais mal positionees en Majuscule
 			}
 		
 		$word = array_replace($notin,$goodletter);
 			$result = array_replace($word,$majwords);
-		$return = implode($result, ''); // On détruit l'arret pour réobtenir le mot.
+		$return = implode($result, ''); // On détruit l'array pour réobtenir le mot.
 		return $return; // On renvoi le mot
 		}
 		
