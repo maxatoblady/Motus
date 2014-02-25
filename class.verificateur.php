@@ -178,7 +178,7 @@ var $motdico;
 		
                     // On split les lettres
      $motSoumis = str_split($Smot);
-     $motdico = str_split("visio");
+     $motdico = str_split($this->motdico);
                            //On check si les mots sont égaux ou non.
 			if($Smot === $this->motdico) {
 				echo "Le mot soumis '".$Smot."' est le bon le mot :\n".$this->motdico."'";
@@ -189,7 +189,7 @@ var $motdico;
 			// Sinon on commence à générer les erreur
                     $badletter = array_intersect($motSoumis,$motdico);
                     $goodletter = array_intersect_assoc($motdico,$motSoumis);
-                    $notin = array('-','-','-','-','-');        // On remplace les lettres non existantes par des tirets
+                    $notin = array('-','-','-','-','-','-','-');        // On remplace les lettres non existantes par des tirets
                  
                  
                     
@@ -204,7 +204,7 @@ var $motdico;
 		$word = array_replace($notin,$goodletter);
 			$result = array_replace($word,$majwords);
 		$return = implode($result, ''); // On détruit l'array pour réobtenir le mot.
-              
+
 		return $return; // On renvoi le mot
 		}
 		

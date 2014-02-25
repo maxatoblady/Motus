@@ -24,7 +24,7 @@ private function check($mot) {
               // session_destroy();
            }
            else {
-             $this->tab_mot .= $verif;
+             $this->tab_mot[] = $verif;
                 
            }
        
@@ -34,16 +34,16 @@ private function check($mot) {
          $motS = $_POST['nom'];
          
             if(isset($motS)) {
-             
+                
          $verifMot = $this->check($motS);
         //var_dump($this->check($motS));
          $_SESSION['mot'] .= $verifMot; 
-          
-         $this->vue->tab_mot[0] .= $this->tab_mot;
-       var_export($this->vue->tab_mot);
+      
+         $this->vue->tab_mot[] = $this->tab_mot;
+       
+
        // var_dump($_SESSION['mot']);
-        }else{
-            
+        }else{ 
            $this->vue->tab_mot = array();
        }
         
