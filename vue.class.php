@@ -16,7 +16,7 @@
 				foreach ($this->tab_mot as $mot){
 					$contenu .= "<tr>";					
 					
-					for ($ii=0; $ii < 6; $ii++) { 
+					for ($ii=0; $ii < 8; $ii++) { 
 						$contenu .= "<td>".$mot[$ii]."</td>";
 					}
 					$contenu .= "</tr>";
