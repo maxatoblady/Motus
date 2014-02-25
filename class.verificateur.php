@@ -1,15 +1,18 @@
 <?php
-
+ require_once 'class_dictionnaire.php';
 class verficateur {
-    
+   
 var $motdico;
 
     public function verificateur () {
         $dico = new dictionnaire;
         
-        $this->motdico = $dico->get_mot();
-        
-        
+        if(isset($this->motdico))  {
+   
+        }
+        else {
+            $this->motdico = $dico->get_mot();
+        }
     }
     
       public function seemsUtf8($string) {
@@ -182,8 +185,8 @@ var $motdico;
      $motdico = str_split($this->motdico);
                            //On check si les mots sont égaux ou non.
 			if($Smot === $this->motdico) {
-				echo "Le mot soumis '".$Smot."' est le bon le mot :\n";
-				return "'".$this->motdico."'"; // On renvoi un message de validation
+				echo "Le mot soumis '".$Smot."' est le bon le mot :\n".$this->motdico."'";
+				return true; // On renvoi un message de validation
 			}
 			// Sinon on commence à générer les erreur
                     $badletter = array_intersect($motSoumis,$motdico);
