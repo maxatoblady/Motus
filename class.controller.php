@@ -15,7 +15,7 @@ public function controller () {
 }
 
 private function check ($mot) {
-       $verificateur = new verficateur();
+       $verificateur = new verificateur();
        
            if($verificateur->verif_lettre($mot)) {
                $this->vue->run = 1;
