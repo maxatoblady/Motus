@@ -4,9 +4,13 @@ class dictionnaire
 	public function get_mot()
 	{
 		$fichier=file('liste_motus.txt');
-		$count=substr_count($fichier, '\n');
-		$rand=rand(1,$count);
+		//var_dump($fichier);
+		//$count=substr_count($fichier,'\n');
+		$count=count($fichier); 
+		$rand=rand(0,$count-1);
 		$mot=$fichier[$rand];
+
+		return $mot;
 	}
 }
 ?>
