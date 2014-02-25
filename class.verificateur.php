@@ -174,7 +174,7 @@ var $motdico;
          $_SESSION['dico'] = $this->motdico;
         
         }
-		$SmotSaccent = $this->unaccent($Smot); // On enlève les accents.
+		//$SmotSaccent = $this->unaccent($Smot); // On enlève les accents.
                 
               
 		

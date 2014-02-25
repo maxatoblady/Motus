@@ -20,11 +20,11 @@ private function check($mot) {
        $verif = $verificateur->verif_lettre($mot);
  
            if($verif === 0) {
-               //$this->vue->run = 1;
+              return $this->vue->run = 1;
               // session_destroy();
            }
            else {
-             $this->tab_mot[] = $verif;
+             return $verif;
                 
            }
        
@@ -37,10 +37,11 @@ private function check($mot) {
                 
          $verifMot = $this->check($motS);
         //var_dump($this->check($motS));
-         $_SESSION['mot'] .= $verifMot; 
+        // $_SESSION['mot'] = $verifMot; 
       
-         $this->vue->tab_mot[] = $this->tab_mot;
-       
+         $this->vue->tab_mot[] = $this->check($motS);
+         $_SESSION['mot'][] = $this->check($motS);
+
 
        // var_dump($_SESSION['mot']);
         }else{ 
