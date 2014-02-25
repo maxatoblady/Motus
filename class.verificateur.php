@@ -8,11 +8,9 @@ var $motdico;
         $dico = new dictionnaire();
         
         if($this->motdico != "")  {
-
+         $this->motdico = $dico->get_mot();
         }
-        else {
-            $this->motdico = $dico->get_mot();
-        }
+        
     }
     
       public function seemsUtf8($string) {
