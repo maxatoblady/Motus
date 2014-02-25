@@ -9,12 +9,12 @@ var $vue;
 
 public function controller () {
      $this->vue = new vue();
-     if(isset($_SESSION['mot'])){
+    if(isset($_SESSION['mot'])){
          $this->tab_mot=$_SESSION['mot'];
      }
 }
 
-private function check ($mot) {
+private function check($mot) {
        $verificateur = new verificateur();
        
            if($verificateur->verif_lettre($mot)) {
@@ -35,16 +35,13 @@ private function check ($mot) {
          $this->check($_POST['nom']);
          $_SESSION['mot'] = $this->check($_POST['nom']);
          $this->vue->tab_mot = $this->tab_mot;
-         $this->vue->affiche();
+
         }else{
             
            $this->vue->tab_mot = array();
-            $this->vue->affiche();
-          
-          
        }
         
-      
+      $this->vue->affiche();
         
         
      
