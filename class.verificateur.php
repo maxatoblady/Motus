@@ -1,17 +1,19 @@
 <?php
  require_once 'class_dictionnaire.php';
-class verficateur {
+class verificateur {
    
 var $motdico;
 
     public function verificateur () {
-        $dico = new dictionnaire;
+        $dico = new dictionnaire();
         
-        if(isset($this->motdico))  {
-   
+        if($this->motdico != "")  {
+   var_dump('toto');
         }
         else {
             $this->motdico = $dico->get_mot();
+             var_dump('toto');
+             var_dump($this->motdico);
         }
     }
     

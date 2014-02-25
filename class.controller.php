@@ -29,15 +29,18 @@ private function check ($mot) {
 }      
     public function run (){
             session_start();
-         if(isset($_POST['nom'])) {
+        
+            if(isset($_POST['nom'])) {
              
          $this->check($_POST['nom']);
          $_SESSION['mot'] = $this->check($_POST['nom']);
          $this->vue->tab_mot = $this->tab_mot;
          $this->vue->affiche();
         }else{
-           
+            
+           $this->vue->tab_mot = array();
             $this->vue->affiche();
+          
           
        }
         
