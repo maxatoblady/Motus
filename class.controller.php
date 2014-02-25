@@ -9,33 +9,39 @@ var $vue;
 
 public function controller () {
      $this->vue = new vue();
+     
     if(isset($_SESSION['mot'])){
-         $this->tab_mot=$_SESSION['mot'];
+         $this->tab_mot.=$_SESSION['mot'];
      }
 }
 
 private function check($mot) {
        $verificateur = new verificateur();
-       
-           if($verificateur->verif_lettre($mot)) {
-               $this->vue->run = 1;
-               session_destroy();
+       $verif = $verificateur->verif_lettre($mot);
+ 
+           if($verif === 0) {
+               //$this->vue->run = 1;
+              // session_destroy();
            }
            else {
-            $verif =  $verificateur->verif_lettre($mot);
-               $this->tab_mot = $verif;
+             $this->tab_mot .= $verif;
+                
            }
        
 }      
     public function run (){
             session_start();
-        
-            if(isset($_POST['nom'])) {
+         $motS = $_POST['nom'];
+         
+            if(isset($motS)) {
              
-         $this->check($_POST['nom']);
-         $_SESSION['mot'] = $this->check($_POST['nom']);
-         $this->vue->tab_mot = $this->tab_mot;
-
+         $verifMot = $this->check($motS);
+        //var_dump($this->check($motS));
+         $_SESSION['mot'] .= $verifMot; 
+          
+         $this->vue->tab_mot[0] .= $this->tab_mot;
+       var_export($this->vue->tab_mot);
+       // var_dump($_SESSION['mot']);
         }else{
             
            $this->vue->tab_mot = array();

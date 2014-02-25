@@ -4,15 +4,7 @@ class verificateur {
    
 var $motdico;
 
-    public function verificateur () {
-        $dico = new dictionnaire();
-        
-        if($this->motdico != "")  {
-         $this->motdico = $dico->get_mot();
-        }
-        
-    }
-    
+ 
       public function seemsUtf8($string) {
       for ($i = 0; $i < strlen($string); $i++) {
         if (ord($string[$i]) < 0x80) continue; # 0bbbbbbb
@@ -174,36 +166,48 @@ var $motdico;
     
    function verif_lettre($Smot) 
         {
+         $dico = new dictionnaire();
+        
+        if($this->motdico == NULL && !isset($this->motdico) && empty($this->motdico) )  {
+         $this->motdico = $dico->get_mot();
+        
+        }
 		$SmotSaccent = $this->unaccent($Smot); // On enlève les accents.
                 
               
-		if(strlen($SmotSaccent) == '5') {
+		
                     // On split les lettres
-     $motSoumis = str_split($SmotSaccent);
-     $motdico = str_split($this->motdico);
+     $motSoumis = str_split($Smot);
+     $motdico = str_split("visio");
                            //On check si les mots sont égaux ou non.
 			if($Smot === $this->motdico) {
 				echo "Le mot soumis '".$Smot."' est le bon le mot :\n".$this->motdico."'";
 				return true; // On renvoi un message de validation
 			}
+                        
+                        
 			// Sinon on commence à générer les erreur
                     $badletter = array_intersect($motSoumis,$motdico);
                     $goodletter = array_intersect_assoc($motdico,$motSoumis);
                     $notin = array('-','-','-','-','-');        // On remplace les lettres non existantes par des tirets
-
+                 
+                 
+                    
                       $majletter = array_diff_assoc($badletter,$goodletter);
 			
+                        
 			foreach($majletter as $key => $va)
 			{
 			$majwords[$key] = strtoupper($va); // On met les lettres existante mais mal positionees en Majuscule
 			}
-		
+	
 		$word = array_replace($notin,$goodletter);
 			$result = array_replace($word,$majwords);
 		$return = implode($result, ''); // On détruit l'array pour réobtenir le mot.
+              
 		return $return; // On renvoi le mot
 		}
 		
         
     }
-}
+
