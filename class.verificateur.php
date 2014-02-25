@@ -168,8 +168,10 @@ var $motdico;
         {
          $dico = new dictionnaire();
         
-        if($this->motdico == NULL && !isset($this->motdico) && empty($this->motdico) )  {
+    
+        if($_SESSION['dico'] == NULL && !isset($_SESSION['dico']) && empty($_SESSION['dico']) )  {
          $this->motdico = $dico->get_mot();
+         $_SESSION['dico'] = $this->motdico;
         
         }
 		$SmotSaccent = $this->unaccent($Smot); // On enlève les accents.
@@ -178,9 +180,9 @@ var $motdico;
 		
                     // On split les lettres
      $motSoumis = str_split($Smot);
-     $motdico = str_split($this->motdico);
+     $motdico = str_split($_SESSION['dico']);
                            //On check si les mots sont égaux ou non.
-			if($Smot === $this->motdico) {
+			if($Smot === $_SESSION['dico']) {
 				echo "Le mot soumis '".$Smot."' est le bon le mot :\n".$this->motdico."'";
 				return true; // On renvoi un message de validation
 			}
