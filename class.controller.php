@@ -3,6 +3,7 @@ require_once 'vue.class.php';
 require_once 'class.verificateur.php';
 
 class controller {
+    
 var $tab_mot = array();
 var $vue;
 
@@ -31,13 +32,13 @@ private function check ($mot) {
          if(isset($_POST['nom'])) {
              
          $this->check($_POST['nom']);
-         $_SESSION['mot'] = $this->check($_POST['']);
+         $_SESSION['mot'] = $this->check($_POST['nom']);
          $this->vue->tab_mot = $this->tab_mot;
          $this->vue->affiche();
         }else{
            
             $this->vue->affiche();
-            $this->vue->run = 0;
+          
        }
         
       
