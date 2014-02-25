@@ -8,12 +8,10 @@ var $motdico;
         $dico = new dictionnaire();
         
         if($this->motdico != "")  {
-   var_dump('toto');
+
         }
         else {
             $this->motdico = $dico->get_mot();
-             var_dump('toto');
-             var_dump($this->motdico);
         }
     }
     
