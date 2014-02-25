@@ -388,7 +388,6 @@ Beauvau
 Beckett
 bécoter
 bégayer
-bel âge
 Bélarus
 Belfast
 Belfond
@@ -524,7 +523,6 @@ cajoler
 calcium
 calculé
 calculs
-calé en
 caleçon
 calepin
 câliner
@@ -593,8 +591,6 @@ cerveau
 cervier
 cessent
 cession
-ceux-ci
-ceux-là
 Cézanne
 chacune
 chagrin
@@ -887,7 +883,6 @@ cuiller
 cuisine
 cuisses
 cuistot
-cul sec
 culotte
 cultive
 cultivé
@@ -1121,7 +1116,6 @@ divisée
 diviser
 divisés
 divorce
-dix ans
 dixième
 dizaine
 docteur
@@ -1272,8 +1266,6 @@ emporte
 emporté
 emprise
 emprunt
-en face
-en haut
 encadré
 enclins
 encrier
@@ -1316,7 +1308,6 @@ entamer
 entendu
 entente
 enterré
-en-tête
 entière
 entiers
 entités
@@ -1574,7 +1565,6 @@ flirter
 Floride
 florins
 flotter
-flux de
 folâtre
 foncier
 fondant
@@ -1816,8 +1806,6 @@ Hussein
 hussite
 hygiène
 iceberg
-ici peu
-ici-bas
 idiotie
 ignoble
 ignorer
@@ -1941,7 +1929,6 @@ jardins
 jaseuse
 javelot
 jésuite
-jet eau
 jettent
 jogging
 Johnson
@@ -3386,7 +3373,6 @@ tentait
 tentant
 tentent
 tentera
-tenu de
 termine
 terminé
 terrain
