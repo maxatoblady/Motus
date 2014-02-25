@@ -6,8 +6,9 @@
 		var $run;		// Boolen 0 : jeu en cours , 1 : jeu gagné	
 
 		public function affiche(){
-
-			if (sizeof($this->tab_mot) <= 5 ){
+			
+			$contenu = "";
+			if (is_array($this->tab_mot) && sizeof($this->tab_mot) <= 5 ){
 
 				$contenu = "<center>";
 				$contenu .= $this->statut()."<table>";
